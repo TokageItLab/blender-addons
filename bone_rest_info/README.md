@@ -18,10 +18,14 @@ However, Blender does not display this determined rest rotation. This add-on dis
 
 ## Update Log
 
+### v1.1 (Mar 12, 2021):
+
+- Implement matrix view
+
 ### v1.0 (Mar 11, 2021):
 
 - Release
 
 ## Note
 
-Blender's `Quat -> XYZ Euler` works the same way as Godot's `Quat.get_euler_zyx()`. This **reversal of notation** is due to the fact that Blender notates the order of rotation in euler angles, while Godot notates the order of matrix processing.
+Blender's `Quat -> XYZ Euler` works the same way as Godot's `Quat.get_euler_zyx()`. This **reversal of notation** is due to that process of matrix differ depending on the system.

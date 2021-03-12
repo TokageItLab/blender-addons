@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Bone Rest Info",
     "author": "Tokage IT Lab.",
-    "version": (1, 0),
+    "version": (1, 1),
     "blender": (2, 91, 0),
     "location" : "View3D > Property Panel > Item",
     "description": "Displays bone rest rotation, i.e. the orientation of the local axis of the bone",
@@ -51,7 +51,8 @@ class SBR_Props(bpy.types.PropertyGroup):
             ("YZX", "YZX Euler", ""),
             ("ZXY", "ZXY Euler", ""),
             ("ZYX", "ZYX Euler", ""),
-            ("AXIS_ANGLE", "Axis Angle", "")
+            ("AXIS_ANGLE", "Axis Angle", ""),
+            ("MATRIX", "Matrix", "")
         ),
         default = 5
     )
@@ -117,7 +118,13 @@ def sbr_info(self, context):
                     ))
                     bone_rotation = transform_mat @ bone_rotation
             # convert rotation type
-            if sc.SBR_Props.rotation_mode == "QUATERNION":
+            if sc.SBR_Props.rotation_mode == "MATRIX":
+                labels = ("X", "Y", "Z")
+                for i in range(3):
+                    sbr_box_column_row = sbr_box_column.row(align=True)
+                    for j in range(3):
+                        sbr_box_column_row.label(text=labels[j] + ": " + trunc(bone_rotation[j][i]))
+            elif sc.SBR_Props.rotation_mode == "QUATERNION":
                 bone_rotation = bone_rotation.to_quaternion()
                 sbr_box_column.label(text="W: " + trunc(bone_rotation.w))
                 sbr_box_column.label(text="X: " + trunc(bone_rotation.x))
