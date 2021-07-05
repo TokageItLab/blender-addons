@@ -18,6 +18,10 @@ However, Blender does not display this determined rest rotation. This add-on dis
 
 ## Update Log
 
+### v1.2 (Jul 6, 2021):
+
+- Fixed typo
+
 ### v1.1 (Mar 12, 2021):
 
 - Implement matrix view

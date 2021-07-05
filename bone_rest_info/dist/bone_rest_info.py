@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Bone Rest Info",
     "author": "Tokage IT Lab.",
-    "version": (1, 1),
+    "version": (1, 2),
     "blender": (2, 91, 0),
     "location" : "View3D > Property Panel > Item",
     "description": "Displays bone rest rotation, i.e. the orientation of the local axis of the bone",
@@ -44,7 +44,7 @@ class SBR_Props(bpy.types.PropertyGroup):
         name="Rotation Mode",
         description=bpy.app.translations.pgettext("Rotation mode"),
         items = (
-            ("QUATERNION", "Quartanion (WXYZ)", ""),
+            ("QUATERNION", "Quaternion (WXYZ)", ""),
             ("XYZ", "XYZ Euler", ""),
             ("XZY", "XZY Euler", ""),
             ("YXZ", "YXZ Euler", ""),
