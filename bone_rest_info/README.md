@@ -6,7 +6,7 @@ In the Node format, such as glTF, each joint has a rest rotation a.k.a. local ax
 
 Blender uses the Head-Tail format, so the rest rotation is determined from the two coordinates: Head and Tail, and the roll value.
 
-However, Blender does not display this determined rest rotation. This add-on displays the rest rotation determined by Blender as a numerical value.
+However, Blender does not display this determined rest rotation in the inspector (but you can see it by bone gizmo axes with "Normal" mode). This add-on displays the rest rotation determined by Blender as a numerical value.
 
 **Bone Rest in Blender**
 
